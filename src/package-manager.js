@@ -5,31 +5,44 @@ export class PackageManager {
     this.options = options
     this.workspace = workspace
 
-    this.packageManagerName = options.packageManagerName
-    this.packageManager = null
+    this.detectedPackageManager = null
+    this.packageManagers = {}
   }
 
-  async init() {
+  async detect() {
     // Detect PM if no preferred one is set
-    if (!this.packageManagerName) {
+    if (!this.options.packageManager) {
       for (const name in PackageManagers) {
         if (await PackageManagers[name].detect(this.workspace)) {
-          this.packageManagerName = name
+          this.detectedPackageManager = name
           break
         }
       }
     }
 
-    // If nothing detected, use npm
-    if (!this.packageManagerName) {
+    // Validate it
+    this.getPackageManager()
+  }
+
+  getPackageManager() {
+    const name = this.options.packageManager || this.detectedPackageManager
+
+    if (!name) {
       throw new Error('No PackageManager detected in ' + this.options.rootDir)
     }
 
-    // Instantiate PM
-    this.packageManager = new PackageManagers[this.packageManagerName](this.workspace, this.options)
+    if (!this.packageManagers[name]) {
+      if (!PackageManagers[name]) {
+        throw new Error('Unknown package manager: ' + name)
+      }
+
+      this.packageManagers[name] = new PackageManagers[name](this.options, this.workspace)
+    }
+
+    return this.packageManagers[name]
   }
 
   install(packages) {
-    return this.packageManager.install(packages)
+    return this.getPackageManager().install(packages)
   }
 }

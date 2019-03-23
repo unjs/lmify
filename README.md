@@ -31,6 +31,26 @@ const { install } = require('lmify')
 await install('package-name')
 ```
 
+### `setPackageManager(name)`
+
+Set preferred package manager to use. By default it will be guessed.
+
+```js
+const { setPackageManager } = require('lmify')
+
+instsetPackageManagerall('yarn')
+```
+
+### `setRootDir(rootDir)`
+
+Set project rootDir. This causes package manager detection to happen on next install of nothing is set.
+
+```js
+const { setRootDir } = require('lmify')
+
+setRootDir(proccess.cwd())
+```
+
 ### `addGranter(fn)`
 
 Add a granter function to ask user before installing packages. This function accepts an array of packages to be added and should return `Promise<Boolean>`
@@ -64,7 +84,7 @@ const constumInstance = new LMIFY(options)
 - `stdout`: Defaults to `process.stdout`
 - `stderr`: Defaults to `process.stderr`
 - `rootDir`: Defaults to `process.cwd()`
-- `packageManagerName`: Should be specified or `install` throws error if nothing detected
+- `packageManager`: Should be specified or `install` throws error if nothing detected
 
 ## License
 

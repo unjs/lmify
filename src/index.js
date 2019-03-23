@@ -3,7 +3,7 @@ import { PackageManager } from './package-manager'
 
 export default class LMIFY {
   constructor(options) {
-    this.options = {
+    this._options = {
       stdout: process.stdout,
       stderr: process.stderr,
       rootDir: process.cwd(),
@@ -21,9 +21,18 @@ export default class LMIFY {
   }
 
   async _init() {
-    this._workspace = new Workspace(this.options)
-    this._packageManager = new PackageManager(this.options, this._workspace)
-    await this._packageManager.init()
+    this._workspace = new Workspace(this._options)
+    this._packageManager = new PackageManager(this._options, this._workspace)
+    await this._packageManager.detect()
+  }
+
+  setPackageManager(name) {
+    this._options.packageManager = name
+  }
+
+  setRootDir(rootDir) {
+    this._options.rootDir = rootDir
+    delete this._initPromise
   }
 
   addGranter(granter) {
@@ -40,8 +49,16 @@ export default class LMIFY {
   }
 
   async install(packages) {
+    if (!packages) {
+      return
+    }
+
     if (!Array.isArray(packages)) {
       packages = [packages]
+    }
+
+    if (!packages.length) {
+      return
     }
 
     const [ grant ] = await Promise.all([
@@ -54,10 +71,6 @@ export default class LMIFY {
     }
 
     return this._packageManager.install(packages)
-  }
-
-  static foo() {
-
   }
 }
 

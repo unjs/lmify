@@ -1,6 +1,6 @@
 
 export class NPM {
-  constructor(workspace) {
+  constructor(options, workspace) {
     this.workspace = workspace
   }
 

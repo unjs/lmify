@@ -1,5 +1,5 @@
 export class Yarn {
-  constructor(workspace) {
+  constructor(options, workspace) {
     this.workspace = workspace
   }
 
