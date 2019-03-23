@@ -84,7 +84,7 @@ const constumInstance = new LMIFY(options)
 - `stdout`: Defaults to `process.stdout`
 - `stderr`: Defaults to `process.stderr`
 - `rootDir`: Defaults to `process.cwd()`
-- `packageManager`: Should be specified or `install` throws error if nothing detected
+- `packageManager`: Should be specified or `install` throws warning if nothing detected and does nothing
 
 ## License
 
