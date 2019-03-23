@@ -10,7 +10,7 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-Programmatically install NPM depenendencies to the project!
+Programmatically install NPM dependencies to the project!
 
 ## Features
 
