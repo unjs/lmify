@@ -29,7 +29,6 @@ export default class LMIFY {
 
   setPackageManager(name) {
     this.options.packageManager = name
-    delete this._initPromise
   }
 
   setRootDir(rootDir) {
