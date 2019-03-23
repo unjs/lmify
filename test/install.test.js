@@ -16,5 +16,5 @@ for (const name of ['npm', 'yarn']) {
 
     expect(await fs.exists(path.join(rootDir, 'node_modules', 'is-nan'))).toBe(true)
     expect(await fs.exists(path.join(rootDir, 'node_modules', 'std-env'))).toBe(true)
-  }, 20000)
+  }, 60000)
 }
