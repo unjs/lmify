@@ -17,7 +17,10 @@ test('Grant false', async () => {
   lmify.addGranter(() => Promise.resolve(false))
   expect(await lmify._grant()).toBe(false)
 
+  await lmify.init()
+
   const install = lmify._packageManager.install = jest.fn()
-  await lmify.install([])
+
+  await lmify.install('foo')
   expect(install).not.toBeCalled()
 })

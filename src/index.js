@@ -2,10 +2,15 @@ import { Workspace } from './workspace'
 import { PackageManager } from './package-manager'
 
 export default class LMIFY {
-  constructor(rootDir) {
+  constructor(options) {
+    this.options = {
+      stdout: process.stdout,
+      stderr: process.stderr,
+      rootDir: process.cwd(),
+      ...options
+    }
+
     this._granters = []
-    this._workspace = new Workspace(rootDir)
-    this._packageManager = new PackageManager(this._workspace)
   }
 
   init() {
@@ -16,6 +21,8 @@ export default class LMIFY {
   }
 
   async _init() {
+    this._workspace = new Workspace(this.options)
+    this._packageManager = new PackageManager(this.options, this._workspace)
     await this._packageManager.init()
   }
 

@@ -6,6 +6,7 @@
     "init": "npm i"
   },
   "dependencies": {
+    "is-nan": "^1.2.1",
     "std-env": "^2.2.1"
   }
 }

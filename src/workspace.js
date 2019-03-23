@@ -3,26 +3,23 @@ import fs from 'fs-extra'
 import execa from 'execa'
 
 export class Workspace {
-  constructor(rootDir = process.cwd()) {
-    this.rootDir = rootDir
-    this.stdout = process.stdout
-    this.stderr = process.stderr
+  constructor(options) {
+    this.options = options
   }
 
   path(filePath) {
-    return path.join(this.rootDir, filePath)
+    return path.join(this.options.rootDir, filePath)
   }
 
   exists(filePath) {
     return fs.exists(this.path(filePath))
   }
 
-  exec(cmd, args, ...options) {
+  exec(cmd, args) {
     return execa(cmd, args, {
-      stdout: this.stdout,
-      stderr: this.stderr,
-      cwd: this.rootDir,
-      ...options
+      stdout: this.options.stdout,
+      stderr: this.options.stderr,
+      cwd: this.options.rootDir
     })
   }
 }
