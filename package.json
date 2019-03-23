@@ -1,5 +1,39 @@
 {
     "name": "lmify",
     "version": "0.0.0",
-    "description": "Let me install it for you!"
+    "description": "Let me install it for you!",
+    "repository": "nuxt/lmify",
+    "main": "dist/lmify.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "bili src/index.js --file-name lmify.js --format cjs",
+        "clean": "rimraf dist test/fixtrues/*/node_modules",
+        "lint": "yarn eslint .",
+        "test": "yarn lint && yarn clean && yarn jest"
+    },
+    "dependencies": {
+        "execa": "^1.0.0",
+        "fs-extra": "^7.0.1"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.4.2",
+        "@nuxtjs/eslint-config": "^0.0.1",
+        "babel-jest": "^24.5.0",
+        "bili": "^4.7.1",
+        "eslint": "^5.15.3",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-jest": "^22.4.1",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "eslint-plugin-vue": "^5.2.2",
+        "esm": "^3.2.20",
+        "jest": "^24.5.0",
+        "npm": "^6.9.0",
+        "rimraf": "^2.6.3",
+        "yarn": "^1.13.0"
+    }
 }

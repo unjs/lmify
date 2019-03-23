@@ -1,0 +1,11 @@
+{
+  "name": "npm_fixture",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "init": "npm i"
+  },
+  "dependencies": {
+    "std-env": "^2.2.1"
+  }
+}

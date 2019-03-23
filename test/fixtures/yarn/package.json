@@ -1,0 +1,11 @@
+{
+  "name": "yarn_fixture",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "init": "yarn"
+  },
+  "dependencies": {
+    "std-env": "^2.2.1"
+  }
+}
