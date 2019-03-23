@@ -10,6 +10,7 @@ test('setPackageManager', async () => {
   LMIFY.setPackageManager('foo')
   expect(LMIFY.instance.options.packageManager).toBe('foo')
   await expect(LMIFY.instance.init()).rejects.toThrow('Unknown package manager: foo')
+  delete LMIFY.instance._initPromise
 })
 
 test('install', async () => {
