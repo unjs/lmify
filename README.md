@@ -1,11 +1,14 @@
 # lmify
 
-> Let Me Install it For You!
+> Let me install it for fou!
 
-[![CircleCI](https://img.shields.io/circleci/project/github/nuxt/lmify.svg?style=flat-square)](https://circleci.com/gh/nuxt/lmify)
-[![Codecov](https://img.shields.io/codecov/c/github/nuxt/lmify.svg?style=flat-square)](https://codecov.io/gh/nuxt/lmify)
-[![npm](https://img.shields.io/npm/v/lmify.svg?style=flat-square)](https://www.npmjs.com/package/lmify)
-[![npm](https://img.shields.io/npm/dt/lmify.svg?style=flat-square)](https://www.npmjs.com/package/lmify)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![packagephobia][packagephobia-src]][packagephobia-href]
+[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Codecov][codecov-src]][codecov-href]
+[![Dependencies][david-dm-src]][david-dm-href]
+[![Standard JS][standard-js-src]][standard-js-href]
 
 Programmatically install NPM depenendencies to the project!
 
@@ -102,3 +105,25 @@ const constumInstance = new LMIFY(options)
 ## License
 
 MIT - Made with 💖 by Nuxt.js team!
+
+<!-- Badges -->
+[npm-version-src]: https://flat.badgen.net/npm/dt/lmify
+[npm-version-href]: https://npmjs.com/package/lmify
+
+[npm-downloads-src]: https://flat.badgen.net/npm/v/lmify
+[npm-downloads-href]: https://npmjs.com/package/lmify
+
+[circle-ci-src]: https://flat.badgen.net/circleci/github/nuxt/lmify
+[circle-ci-href]: https://circleci.com/gh/nuxt/lmify
+
+[codecov-src]: https://flat.badgen.net/codecov/c/github/nuxt/lmify
+[codecov-href]: https://codecov.io/gh/nuxt/lmify
+
+[david-dm-src]: https://flat.badgen.net/david/dep/nuxt/lmify
+[david-dm-href]: https://david-dm.org/nuxt/lmify
+
+[standard-js-src]: https://flat.badgen.net/badge/code%20style/standard/f2a
+[standard-js-href]: https://standardjs.com
+
+[packagephobia-src]: https://flat.badgen.net/packagephobia/install/lmify
+[packagephobia-href]: https://packagephobia.now.sh/result?p=lmify
