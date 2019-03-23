@@ -1,6 +1,6 @@
 {
     "name": "lmify",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Programmatically install NPM dependencies to the project!",
     "repository": "nuxt/lmify",
     "main": "dist/lmify.js",
