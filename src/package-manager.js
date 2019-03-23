@@ -20,16 +20,21 @@ export class PackageManager {
       }
     }
 
+    // If nothing detected
+    if (!this.detectedPackageManager) {
+      this.detectedPackageManager = 'nop'
+      // eslint-disable-next-line no-console
+      console.warn(
+        'No package manager detected in ' + this.options.rootDir + '\n' +
+        'Ignoring any install command. Please use `lmify.setPackageManager(name)`')
+    }
+
     // Validate it
     this.getPackageManager()
   }
 
   getPackageManager() {
     const name = this.options.packageManager || this.detectedPackageManager
-
-    if (!name) {
-      throw new Error('No PackageManager detected in ' + this.options.rootDir)
-    }
 
     if (!this.packageManagers[name]) {
       if (!PackageManagers[name]) {

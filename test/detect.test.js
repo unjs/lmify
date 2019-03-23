@@ -12,6 +12,13 @@ for (const name of ['npm', 'yarn']) {
 
 test('No PackageManager', async () => {
   const rootDir = path.join(__dirname, 'fixtures', '404')
+
+  const origin = global.console.warn
+  global.console.warn = jest.fn()
+
   const lmify = new LMIFY({ rootDir })
-  await expect(lmify.init()).rejects.toThrow('No PackageManager detected in')
+  await lmify.init()
+  expect(global.console.warn).toHaveBeenCalled()
+
+  global.console.warn = origin
 })
