@@ -22,7 +22,7 @@ export class PackageManager {
 
     // If nothing detected, use npm
     if (!this.packageManagerName) {
-      throw new Error('No PackageManager detected in ' + this.workspace.rootDir)
+      throw new Error('No PackageManager detected in ' + this.options.rootDir)
     }
 
     // Instantiate PM
