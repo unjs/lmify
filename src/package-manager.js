@@ -21,7 +21,7 @@ export class PackageManager {
     }
 
     // If nothing detected
-    if (!this.detectedPackageManager) {
+    if (!this.options.packageManager && !this.detectedPackageManager) {
       this.detectedPackageManager = 'nop'
       // eslint-disable-next-line no-console
       console.warn(
@@ -30,7 +30,7 @@ export class PackageManager {
     }
 
     // Validate it
-    this.getPackageManager()
+    await this.getPackageManager()
   }
 
   getPackageManager() {

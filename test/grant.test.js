@@ -19,7 +19,7 @@ test('Grant false', async () => {
 
   await lmify.init()
 
-  const install = lmify._packageManager.install = jest.fn()
+  const install = lmify.packageManager.install = jest.fn()
 
   await lmify.install('foo')
   expect(install).not.toBeCalled()

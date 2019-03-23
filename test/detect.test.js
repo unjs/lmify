@@ -6,7 +6,7 @@ for (const name of ['npm', 'yarn']) {
     const rootDir = path.join(__dirname, 'fixtures', name)
     const lmify = new LMIFY({ rootDir })
     await lmify.init()
-    expect(lmify._packageManager.detectedPackageManager).toBe(name)
+    expect(lmify.packageManager.detectedPackageManager).toBe(name)
   })
 }
 

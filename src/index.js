@@ -3,7 +3,7 @@ import { PackageManager } from './package-manager'
 
 export default class LMIFY {
   constructor(options) {
-    this._options = {
+    this.options = {
       stdout: process.stdout,
       stderr: process.stderr,
       rootDir: process.cwd(),
@@ -22,17 +22,18 @@ export default class LMIFY {
   }
 
   async _init() {
-    this._workspace = new Workspace(this._options)
-    this._packageManager = new PackageManager(this._options, this._workspace)
-    await this._packageManager.detect()
+    this.workspace = new Workspace(this.options)
+    this.packageManager = new PackageManager(this.options, this.workspace)
+    await this.packageManager.detect()
   }
 
   setPackageManager(name) {
-    this._options.packageManager = name
+    this.options.packageManager = name
+    delete this._initPromise
   }
 
   setRootDir(rootDir) {
-    this._options.rootDir = rootDir
+    this.options.rootDir = rootDir
     delete this._initPromise
   }
 
@@ -71,7 +72,7 @@ export default class LMIFY {
       return
     }
 
-    return this._packageManager.install(packages)
+    return this.packageManager.install(packages)
   }
 }
 
