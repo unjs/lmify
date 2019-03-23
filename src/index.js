@@ -7,6 +7,7 @@ export default class LMIFY {
       stdout: process.stdout,
       stderr: process.stderr,
       rootDir: process.cwd(),
+      packageManager: undefined,
       ...options
     }
 
