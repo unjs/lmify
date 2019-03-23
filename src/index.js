@@ -55,4 +55,15 @@ export default class LMIFY {
 
     return this._packageManager.install(packages)
   }
+
+  static foo() {
+
+  }
+}
+
+// Static methods
+const instance = new LMIFY({ packageManagerName: 'yarn' })
+LMIFY.instance = instance
+for (const method of ['install', 'addGranter']) {
+  LMIFY[method] = LMIFY.instance[method].bind(LMIFY.instance)
 }
