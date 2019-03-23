@@ -8,10 +8,12 @@
         "dist"
     ],
     "scripts": {
-        "build": "bili src/index.js --file-name lmify.js --format cjs",
+        "build": "yarn clean && bili src/index.js --file-name lmify.js --format cjs",
         "clean": "rimraf dist test/fixtrues/*/node_modules",
         "lint": "yarn eslint .",
-        "test": "yarn lint && yarn clean && yarn jest"
+        "test": "yarn lint && yarn clean && yarn jest",
+        "prepublish": "yarn build",
+        "release": "standard-version && yarn build && git push --follow-tags && npm publish"
     },
     "dependencies": {
         "execa": "^1.0.0",
@@ -34,6 +36,7 @@
         "jest": "^24.5.0",
         "npm": "^6.9.0",
         "rimraf": "^2.6.3",
+        "standard-version": "^5.0.2",
         "yarn": "^1.13.0"
     }
 }
