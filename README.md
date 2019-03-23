@@ -37,7 +37,7 @@ npm install lmify
 
 ### `install(package|packages)`
 
-Install one or more packages in rootDir using prefered package manager.
+Install one or more packages in rootDir using the preferred package manager.
 
 ```js
 const { install } = require('lmify')
@@ -47,7 +47,7 @@ await install('package-name')
 
 ### `setPackageManager(name)`
 
-Set preferred package manager to use. By default it will be guessed.
+Set preferred package manager to use. By default, it will be guessed.
 
 ```js
 const { setPackageManager } = require('lmify')
@@ -57,7 +57,7 @@ setPackageManager('yarn')
 
 ### `setRootDir(rootDir)`
 
-Set project root dir. This causes package manager detection to happen on next install.
+Set project root dir. This causes package manager detection to happen on the next install.
 
 ```js
 const { setRootDir } = require('lmify')
@@ -67,13 +67,13 @@ setRootDir(proccess.cwd())
 
 ### `addGranter(fn)`
 
-Add a granter function to ask user before installing packages.
+Add a granter function to ask the user before installing packages.
 
 This function accepts an array of packages to be added and should return `Promise<Boolean>`.
 
-Wihout a granter, install imediatelly adds package.
+Without a granter, install immediately adds package.
 
-If multiple granter added, first response will be used (either deny or allow).
+If multiple granters added, the first response will be used (either deny or allow).
 
 ```js
 const { addGranter } = require('lmify')
@@ -86,7 +86,7 @@ addGranter(async packages => {
 
 ### Class: `LMIFY`
 
-You can choose between using singleton instance your creating a new instance of `LMIFY`:
+You can choose between using singleton instance or creating a new instance of `LMIFY`:
 
 
 ```js
