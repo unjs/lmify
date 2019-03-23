@@ -1,11 +1,5 @@
 {
   "extends": [
     "@nuxtjs"
-  ],
-  "baseBranches": [
-    "dev"
-  ],
-  "ignoreDeps": [
-    "thread-loader"
   ]
 }
