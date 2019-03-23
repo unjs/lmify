@@ -78,6 +78,6 @@ export default class LMIFY {
 // Static methods
 const instance = new LMIFY()
 LMIFY.instance = instance
-for (const method of ['install', 'addGranter']) {
+for (const method of ['install', 'addGranter', 'setPackageManager', 'setRootDir']) {
   LMIFY[method] = LMIFY.instance[method].bind(LMIFY.instance)
 }
