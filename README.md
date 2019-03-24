@@ -1,6 +1,6 @@
 # lmify
 
-> Let me install it for fou!
+> Let me install it for you!
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
