@@ -24,9 +24,9 @@
         "@babel/preset-env": "^7.4.2",
         "@nuxtjs/eslint-config": "^0.0.1",
         "babel-jest": "^24.5.0",
-        "bili": "^4.7.1",
+        "bili": "^4.7.2",
         "codecov": "^3.2.0",
-        "eslint": "^5.15.3",
+        "eslint": "^5.16.0",
         "eslint-config-standard": "^12.0.0",
         "eslint-plugin-import": "^2.16.0",
         "eslint-plugin-jest": "^22.4.1",
@@ -34,11 +34,11 @@
         "eslint-plugin-promise": "^4.0.1",
         "eslint-plugin-standard": "^4.0.0",
         "eslint-plugin-vue": "^5.2.2",
-        "esm": "^3.2.20",
+        "esm": "^3.2.22",
         "jest": "^24.5.0",
         "npm": "^6.9.0",
         "rimraf": "^2.6.3",
         "standard-version": "^5.0.2",
-        "yarn": "^1.13.0"
+        "yarn": "^1.15.2"
     }
 }
