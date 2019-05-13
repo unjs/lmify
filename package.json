@@ -17,7 +17,7 @@
     },
     "dependencies": {
         "execa": "^1.0.0",
-        "fs-extra": "^7.0.1",
+        "fs-extra": "^8.0.1",
         "std-env": "^2.2.1"
     },
     "devDependencies": {
