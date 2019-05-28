@@ -4,7 +4,7 @@ declare class Lmify {
 
   // for initalize
   init(): void
-  _init(): Promise<void>
+  private _init(): Promise<void>
   
   // options
   setPackageManager(name: 'npm' | 'yarn'): void
