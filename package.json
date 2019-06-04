@@ -6,7 +6,8 @@
     "typings": "types/lmify.d.ts",
     "main": "dist/lmify.js",
     "files": [
-        "dist"
+        "dist",
+        "types/*.d.ts"
     ],
     "scripts": {
         "build": "yarn clean && bili src/index.js --file-name lmify.js --format cjs",
