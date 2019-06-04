@@ -5,7 +5,7 @@ declare class Lmify {
   // for initalize
   init(): void
   private _init(): Promise<void>
-  
+
   // options
   setPackageManager(name: 'npm' | 'yarn'): void
   setRootDir(): void
@@ -18,6 +18,5 @@ declare class Lmify {
   install(packages: string[]): Promise<void> | execa.ExecaReturns
 }
 
-declare module 'lmify' {
-  export default Lmify
-}
+declare var lmify: Lmify;
+export = lmify;
