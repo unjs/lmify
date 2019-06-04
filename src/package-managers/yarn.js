@@ -15,4 +15,11 @@ export class Yarn {
       ...packages
     ])
   }
+
+  uninstall(packages) {
+    return this.workspace.exec('yarn', [
+      'remove',
+      ...packages
+    ])
+  }
 }

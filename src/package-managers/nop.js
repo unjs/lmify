@@ -6,4 +6,8 @@ export class Nop {
   install() {
     return Promise.resolve()
   }
+
+  uninstall() {
+    return Promise.resolve()
+  }
 }

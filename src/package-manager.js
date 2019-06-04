@@ -50,4 +50,8 @@ export class PackageManager {
   install(packages) {
     return this.getPackageManager().install(packages)
   }
+
+  uninstall(packages) {
+    return this.getPackageManager().uninstall(packages)
+  }
 }

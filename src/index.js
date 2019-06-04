@@ -62,7 +62,7 @@ export default class LMIFY {
       return
     }
 
-    const [ grant ] = await Promise.all([
+    const [grant] = await Promise.all([
       this._grant(packages),
       this.init()
     ])
@@ -72,6 +72,31 @@ export default class LMIFY {
     }
 
     return this.packageManager.install(packages)
+  }
+
+  async uninstall(packages) {
+    if (!packages) {
+      return
+    }
+
+    if (!Array.isArray(packages)) {
+      packages = [packages]
+    }
+
+    if (!packages.length) {
+      return
+    }
+
+    const [grant] = await Promise.all([
+      this._grant(packages),
+      this.init()
+    ])
+
+    if (!grant) {
+      return
+    }
+
+    return this.packageManager.uninstall(packages)
   }
 }
 

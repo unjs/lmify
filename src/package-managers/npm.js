@@ -16,4 +16,11 @@ export class NPM {
       ...packages
     ])
   }
+
+  uninstall(packages) {
+    return this.workspace.exec('npm', [
+      'uninstall',
+      ...packages
+    ])
+  }
 }
