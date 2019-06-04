@@ -45,6 +45,16 @@ const { install } = require('lmify')
 await install('package-name')
 ```
 
+### `uninstall(package|packages)`
+
+Uninstall one or more packages in rootDir using the preferred package manager.
+
+```js
+const { uninstall } = require('lmify')
+
+await uninstall('package-name')
+```
+
 ### `setPackageManager(name)`
 
 Set preferred package manager to use. By default, it will be guessed.
