@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/nuxt/lmify/compare/v0.2.1...v0.2.2) (2019-06-04)
+
+
+### Bug Fixes
+
+* **ts:** fix type export configuration ([#10](https://github.com/nuxt/lmify/issues/10)) ([0ad374c](https://github.com/nuxt/lmify/commit/0ad374c))
+
+
+
 ### [0.2.1](https://github.com/nuxt/lmify/compare/v0.2.0...v0.2.1) (2019-06-04)
 
 
