@@ -1,7 +1,7 @@
 import PackageManagers from './package-managers'
 
 export class PackageManager {
-  constructor(options, workspace) {
+  constructor (options, workspace) {
     this.options = options
     this.workspace = workspace
 
@@ -9,7 +9,7 @@ export class PackageManager {
     this.packageManagers = {}
   }
 
-  async detect() {
+  async detect () {
     // Detect PM if no preferred one is set
     if (!this.options.packageManager) {
       for (const name in PackageManagers) {
@@ -33,7 +33,7 @@ export class PackageManager {
     await this.getPackageManager()
   }
 
-  getPackageManager() {
+  getPackageManager () {
     const name = this.options.packageManager || this.detectedPackageManager
 
     if (!this.packageManagers[name]) {
@@ -47,7 +47,7 @@ export class PackageManager {
     return this.packageManagers[name]
   }
 
-  install(packages) {
+  install (packages) {
     return this.getPackageManager().install(packages)
   }
 }

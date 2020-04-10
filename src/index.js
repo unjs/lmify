@@ -2,7 +2,7 @@ import { Workspace } from './workspace'
 import { PackageManager } from './package-manager'
 
 export default class LMIFY {
-  constructor(options) {
+  constructor (options) {
     this.options = {
       stdout: process.stdout,
       stderr: process.stderr,
@@ -14,33 +14,33 @@ export default class LMIFY {
     this._granters = []
   }
 
-  init() {
+  init () {
     if (!this._initPromise) {
       this._initPromise = this._init()
     }
     return this._initPromise
   }
 
-  async _init() {
+  async _init () {
     this.workspace = new Workspace(this.options)
     this.packageManager = new PackageManager(this.options, this.workspace)
     await this.packageManager.detect()
   }
 
-  setPackageManager(name) {
+  setPackageManager (name) {
     this.options.packageManager = name
   }
 
-  setRootDir(rootDir) {
+  setRootDir (rootDir) {
     this.options.rootDir = rootDir
     delete this._initPromise
   }
 
-  addGranter(granter) {
+  addGranter (granter) {
     this._granters.push(granter)
   }
 
-  _grant(packages) {
+  _grant (packages) {
     if (!this._granters.length) {
       return Promise.resolve(true)
     }
@@ -49,7 +49,7 @@ export default class LMIFY {
       .then(r => Boolean(r))
   }
 
-  async install(packages) {
+  async install (packages) {
     if (!packages) {
       return
     }
@@ -62,7 +62,7 @@ export default class LMIFY {
       return
     }
 
-    const [ grant ] = await Promise.all([
+    const [grant] = await Promise.all([
       this._grant(packages),
       this.init()
     ])

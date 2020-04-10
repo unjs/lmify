@@ -1,9 +1,9 @@
 export class Nop {
-  static detect() {
+  static detect () {
     return Promise.resolve(false)
   }
 
-  install() {
+  install () {
     return Promise.resolve()
   }
 }

@@ -1,10 +1,10 @@
 
 export class NPM {
-  constructor(options, workspace) {
+  constructor (options, workspace) {
     this.workspace = workspace
   }
 
-  static async detect(workspace) {
+  static async detect (workspace) {
     if (await workspace.exists('package-lock.json')) {
       return true
     }
@@ -13,7 +13,7 @@ export class NPM {
     }
   }
 
-  install(packages) {
+  install (packages) {
     return this.workspace.exec('npm', [
       'install',
       ...packages
