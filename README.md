@@ -10,16 +10,7 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-Programmatically install NPM dependencies to the project!
-
-## Features
-
-- Support [Yarn](https://yarnpkg.com) and [NPM](https://docs.npmjs.com/cli/npm)
-- Auto package manager detection
-  - Using Yarn if `yarn.lock`
-  - Using NPM if `package-lock.json` or `package.json`
-- Singleton or Class API
-- Optional granters
+Programmatically install node dependencies to the project automatically detecting Yarn and NPM!
 
 ## Install
 
@@ -47,7 +38,7 @@ const { install } = require('lmify')
 await install('package-name')
 ```
 
-### `setPackageManager(name)`
+### `setPackageManager(name: npm|yarn|nop)`
 
 Set preferred package manager to use. By default, it will be guessed.
 
@@ -66,35 +57,14 @@ const { setRootDir } = require('lmify')
 
 setRootDir(proccess.cwd())
 ```
+### `create(options)`
 
-### `addGranter(fn)`
-
-Add a granter function to ask the user before installing packages.
-
-This function accepts an array of packages to be added and should return `Promise<Boolean>`.
-
-Without a granter, install immediately adds package.
-
-If multiple granters added, the first response will be used (either deny or allow).
+Create new instance of LMIFY:
 
 ```js
-const { addGranter } = require('lmify')
+const { create } = require('lmify')
 
-addGranter(async packages => {
-  console.log('Installing packages:', packages)
-  return true // Allow
-})
-```
-
-### Class: `LMIFY`
-
-You can choose between using singleton instance or creating a new instance of `LMIFY`:
-
-
-```js
-const LMIFY = require('lmify')
-
-const constumInstance = new LMIFY(options)
+const constumInstance = create(options)
 ```
 
 #### `options`
@@ -102,7 +72,7 @@ const constumInstance = new LMIFY(options)
 - `stdout`: Defaults to `process.stdout`
 - `stderr`: Defaults to `process.stderr`
 - `rootDir`: Defaults to `process.cwd()`
-- `packageManager`: Better if specified or `install` will throw a warning if no package manager is detected
+- `packageManager`: Better if specified or `install` will throw an error if no package manager is detected
 
 ## License
 
