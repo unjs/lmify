@@ -38,6 +38,27 @@ const { install } = require('lmify')
 await install('package-name')
 ```
 
+### `installDev(package|packages)`
+
+Same as `install` but using `devDependencies`
+
+```js
+const { installDev } = require('lmify')
+
+await installDev('package-name')
+```
+
+
+### `uninstall(package|packages)`
+
+Uninstall packages
+
+```js
+const { uninstall } = require('lmify')
+
+await uninstall('package-name')
+```
+
 ### `setPackageManager(name: npm|yarn|nop)`
 
 Set preferred package manager to use. By default, it will be guessed.
