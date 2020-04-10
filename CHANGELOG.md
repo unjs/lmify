@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/nuxt/lmify/compare/v0.2.2...v0.3.0) (2020-04-10)
+
+
+### Features
+
+* Add fallback for npm and add test for yarn priority ([3b49d82](https://github.com/nuxt/lmify/commit/3b49d82eb537c24eeb88cda7055fcc4438ecca45))
+
 ### [0.2.2](https://github.com/nuxt/lmify/compare/v0.2.1...v0.2.2) (2019-06-04)
 
 
