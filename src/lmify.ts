@@ -6,11 +6,8 @@ export class LMIFY {
   private options: LMIFYOptions
   private packageManager?: PackageManager
   private _initPromise?: Promise<void>
-  LMIFY: LMIFY
 
   constructor(options?: LMIFYOptions) {
-    this.LMIFY = this
-
     this.options = {
       stdout: process.stdout,
       stderr: process.stderr,
@@ -18,6 +15,10 @@ export class LMIFY {
       packageManager: null,
       ...options
     }
+  }
+
+  create(options?: LMIFYOptions) {
+    return new LMIFY(options)
   }
 
   init() {
@@ -52,7 +53,7 @@ export class LMIFY {
     this.invalidate()
   }
 
-  exec(cmd: string, args: (string|undefined)[], opts = {}) {
+  exec(cmd: string, args: (string | undefined)[], opts = {}) {
     const execa = require('execa')
     return execa(cmd, args.filter(x => x !== undefined), {
       stdout: this.options.stdout,
@@ -71,7 +72,7 @@ export class LMIFY {
     return this.packageManager[action](...args)
   }
 
-  doPackages(action: string, packages: string|string[] = [], opts = {}) {
+  doPackages(action: string, packages: string | string[] = [], opts = {}) {
     if (packages && !Array.isArray(packages)) {
       packages = [packages]
     }
