@@ -16,7 +16,9 @@ Programmatically install NPM dependencies to the project!
 
 - Support [Yarn](https://yarnpkg.com) and [NPM](https://docs.npmjs.com/cli/npm)
 - Auto package manager detection
-- Singleton  or Class API
+  - Using Yarn if `yarn.lock`
+  - Using NPM if `package-lock.json` or `package.json`
+- Singleton or Class API
 - Optional granters
 
 ## Install
@@ -100,7 +102,7 @@ const constumInstance = new LMIFY(options)
 - `stdout`: Defaults to `process.stdout`
 - `stderr`: Defaults to `process.stderr`
 - `rootDir`: Defaults to `process.cwd()`
-- `packageManager`: Should be specified or `install` throws warning if nothing detected and does nothing
+- `packageManager`: Better if specified or `install` will throw a warning if no package manager is detected
 
 ## License
 
