@@ -7,7 +7,7 @@ export class LMIFY {
   private packageManager?: PackageManager
   private _initPromise?: Promise<void>
 
-  constructor(options?: LMIFYOptions) {
+  constructor (options?: LMIFYOptions) {
     this.options = {
       stdout: process.stdout,
       stderr: process.stderr,
@@ -17,22 +17,22 @@ export class LMIFY {
     }
   }
 
-  create(options?: LMIFYOptions) {
+  create (options?: LMIFYOptions) {
     return new LMIFY(options)
   }
 
-  init() {
+  init () {
     if (!this._initPromise) {
       this._initPromise = this._init()
     }
     return this._initPromise
   }
 
-  invalidate() {
+  invalidate () {
     delete this._initPromise
   }
 
-  async _init() {
+  async _init () {
     if (!this.options.packageManager) {
       this.options.packageManager = await detectPackageManager(this.options.rootDir)
     }
@@ -43,17 +43,17 @@ export class LMIFY {
     this.packageManager = new PM(this)
   }
 
-  setPackageManager(name: string) {
+  setPackageManager (name: string) {
     this.options.packageManager = name
     this.invalidate()
   }
 
-  setRootDir(rootDir: string) {
+  setRootDir (rootDir: string) {
     this.options.rootDir = rootDir
     this.invalidate()
   }
 
-  exec(cmd: string, args: (string | undefined)[], opts = {}) {
+  exec (cmd: string, args: (string | undefined)[], opts = {}) {
     const execa = require('execa')
     return execa(cmd, args.filter(x => x !== undefined), {
       stdout: this.options.stdout,
@@ -63,7 +63,7 @@ export class LMIFY {
     })
   }
 
-  async do(action: string, ...args) {
+  async do (action: string, ...args) {
     await this.init()
     if (typeof this.packageManager[action] === 'undefined') {
       // eslint-disable-next-line
@@ -72,7 +72,7 @@ export class LMIFY {
     return this.packageManager[action](...args)
   }
 
-  doPackages(action: string, packages: string | string[] = [], opts = {}) {
+  doPackages (action: string, packages: string | string[] = [], opts = {}) {
     if (packages && !Array.isArray(packages)) {
       packages = [packages]
     }
@@ -83,15 +83,15 @@ export class LMIFY {
     return this.do(action, packages, opts)
   }
 
-  install(packages: string | string[], opts: InstallOpts = {}) {
+  install (packages: string | string[], opts: InstallOpts = {}) {
     return this.doPackages('install', packages, opts)
   }
 
-  installDev(packages: string | string[], opts: InstallOpts = {}) {
+  installDev (packages: string | string[], opts: InstallOpts = {}) {
     return this.install(packages, { dev: true, ...opts })
   }
 
-  uninstall(packages: string | string[], opts = {}) {
+  uninstall (packages: string | string[], opts = {}) {
     return this.doPackages('uninstall', packages, opts)
   }
 }

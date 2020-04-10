@@ -4,18 +4,18 @@
     "description": "Programmatically install NPM dependencies to the project!",
     "repository": "nuxt/lmify",
     "main": "dist/index.js",
-    "types": "types",
+    "types": "types/*",
     "files": [
         "dist",
         "types"
     ],
     "scripts": {
         "build": "yarn clean && tsc",
-        "clean": "rimraf dist test/fixtrues/*/node_modules",
-        "lint": "yarn eslint .",
+        "clean": "node node_modules/rimraf/bin.js dist types",
+        "lint": "yarn eslint --ext ts .",
         "prepublish": "yarn build",
-        "release": "standard-version && yarn build && git push --follow-tags && npm publish",
-        "test": "yarn lint && yarn build && yarn jest"
+        "release": "yarn test && standard-version && yarn build && git push --follow-tags && npm publish",
+        "test": "yarn lint && yarn jest"
     },
     "dependencies": {
         "execa": "^4.0.0",
@@ -23,6 +23,7 @@
         "std-env": "^2.2.1"
     },
     "devDependencies": {
+        "@nuxtjs/eslint-config-typescript": "latest",
         "@types/jest": "latest",
         "@types/node": "latest",
         "eslint": "latest",

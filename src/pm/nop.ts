@@ -1,15 +1,14 @@
 import { LMIFY } from '../lmify'
-import { PackageManager, InstallOpts } from '../types'
+import { PackageManager } from '../types'
 
 export class NOP implements PackageManager {
+  constructor (private lmify: LMIFY) { }
 
-  constructor(private lmify: LMIFY) { }
-
-  install(packages: string[] = [], opts: InstallOpts = {}) {
+  install () {
     return Promise.resolve()
   }
 
-  uninstall(packages: string[] = []) {
+  uninstall () {
     return Promise.resolve()
   }
 }

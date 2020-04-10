@@ -9,7 +9,7 @@ for (const name of ['npm', 'yarn']) {
     if (fs.existsSync(rootDir)) {
       fs.removeSync(rootDir)
       fs.mkdirSync(rootDir)
-      fs.writeFileSync(path.join(rootDir, 'package.json'), "{}", "utf-8")
+      fs.writeFileSync(path.join(rootDir, 'package.json'), '{}', 'utf-8')
     }
 
     const lmify = new LMIFY({
@@ -42,5 +42,4 @@ for (const name of ['npm', 'yarn']) {
     expect(Object.keys(pkg.dependencies)).toMatchObject([])
     expect(Object.keys(pkg.devDependencies)).toMatchObject([])
   }, 60000)
-
 }

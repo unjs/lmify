@@ -2,10 +2,9 @@ import { LMIFY } from '../lmify'
 import { PackageManager, InstallOpts } from '../types'
 
 export class Yarn implements PackageManager {
+  constructor (private lmify: LMIFY) {}
 
-  constructor(private lmify: LMIFY) {}
-
-  install(packages: string[] = [], opts: InstallOpts = {}) {
+  install (packages: string[] = [], opts: InstallOpts = {}) {
     return this.lmify.exec('yarn', [
       'add',
       opts.dev ? '--dev' : undefined,
@@ -13,7 +12,7 @@ export class Yarn implements PackageManager {
     ])
   }
 
-  uninstall(packages: string[] = []) {
+  uninstall (packages: string[] = []) {
     return this.lmify.exec('yarn', [
       'remove',
       ...packages

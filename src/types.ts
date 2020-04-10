@@ -1,5 +1,3 @@
-import { LMIFY } from "./lmify";
-
 export interface LMIFYOptions {
   stdout?: string | NodeJS.WriteStream,
   stderr?: string | NodeJS.WriteStream,
@@ -15,5 +13,3 @@ export type PackageManager = {
 export interface InstallOpts {
   dev?: boolean
 }
-
-
