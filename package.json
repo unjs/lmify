@@ -3,19 +3,19 @@
     "version": "0.3.0",
     "description": "Programmatically install NPM dependencies to the project!",
     "repository": "nuxt/lmify",
-    "typings": "types/lmify.d.ts",
-    "main": "dist/lmify.js",
+    "main": "dist/index.js",
+    "types": "types",
     "files": [
         "dist",
-        "types/*.d.ts"
+        "types"
     ],
     "scripts": {
-        "build": "yarn clean && bili src/index.js --file-name lmify.js --format cjs",
+        "build": "yarn clean && tsc",
         "clean": "rimraf dist test/fixtrues/*/node_modules",
         "lint": "yarn eslint .",
-        "test": "yarn lint && yarn clean && yarn jest",
         "prepublish": "yarn build",
-        "release": "standard-version && yarn build && git push --follow-tags && npm publish"
+        "release": "standard-version && yarn build && git push --follow-tags && npm publish",
+        "test": "yarn lint && yarn build && yarn jest"
     },
     "dependencies": {
         "execa": "^4.0.0",
@@ -23,25 +23,16 @@
         "std-env": "^2.2.1"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.9.5",
-        "@nuxtjs/eslint-config": "^2.0.2",
-        "@types/execa": "^2.0.0",
-        "babel-jest": "^25.3.0",
-        "bili": "^4.9.0",
-        "codecov": "^3.6.5",
-        "eslint": "^6.8.0",
-        "eslint-config-standard": "^14.1.1",
-        "eslint-plugin-import": "^2.20.2",
-        "eslint-plugin-jest": "^23.8.2",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-promise": "^4.2.1",
-        "eslint-plugin-standard": "^4.0.1",
-        "eslint-plugin-vue": "^6.2.2",
-        "esm": "^3.2.25",
-        "jest": "^25.3.0",
-        "npm": "^6.14.4",
-        "rimraf": "^3.0.2",
-        "standard-version": "^7.1.0",
-        "yarn": "^1.22.4"
+        "@types/jest": "latest",
+        "@types/node": "latest",
+        "eslint": "latest",
+        "jest": "latest",
+        "npm": "latest",
+        "rimraf": "latest",
+        "standard-version": "latest",
+        "ts-jest": "latest",
+        "ts-node": "latest",
+        "typescript": "latest",
+        "yarn": "latest"
     }
 }

@@ -1,22 +1,18 @@
-import * as execa from 'execa'
-
-declare class Lmify {
-
-  // for initalize
-  init(): void
-  private _init(): Promise<void>
-
-  // options
-  setPackageManager(name: 'npm' | 'yarn'): void
-  setRootDir(): void
-
-  // permissions
-  addGranter(granter: () => Promise<boolean>): void
-  _grant(packages: string): Promise<boolean>
-
-  // commands
-  install(packages: string[]): Promise<void> | execa.ExecaReturns
+import { LMIFYOptions, InstallOpts } from './types';
+export declare class LMIFY {
+    private options;
+    private packageManager?;
+    private _initPromise?;
+    constructor(options?: LMIFYOptions);
+    init(): Promise<void>;
+    invalidate(): void;
+    _init(): Promise<void>;
+    setPackageManager(name: string): void;
+    setRootDir(rootDir: string): void;
+    exec(cmd: string, args: (string | undefined)[], opts?: {}): any;
+    do(action: string, opts: object): Promise<any>;
+    doPackages(action: string, packages?: string | string[], opts?: {}): Promise<any>;
+    install(packages: string | string[], opts?: InstallOpts): Promise<any>;
+    installDev(packages: string | string[], opts?: InstallOpts): Promise<any>;
+    uninstall(packages: string | string[], opts?: {}): Promise<any>;
 }
-
-declare var lmify: Lmify;
-export = lmify;

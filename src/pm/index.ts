@@ -1,9 +1,9 @@
 import { NPM } from './npm'
 import { Yarn } from './yarn'
-import { Nop } from './nop'
+import { NOP } from './nop'
 
 export default {
-  yarn: Yarn,
+  nop: NOP,
   npm: NPM,
-  nop: Nop
+  yarn: Yarn
 }
