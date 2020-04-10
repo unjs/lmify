@@ -1,12 +1,12 @@
 {
-  "name": "npm_fixture",
+  "name": "npm_fallback_fixture",
   "private": true,
   "license": "MIT",
   "scripts": {
     "init": "npm i"
   },
   "dependencies": {
-    "is-nan": "^1.3.0",
+    "is-nan": "^1.2.1",
     "std-env": "^2.2.1"
   }
 }

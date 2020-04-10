@@ -1,9 +1,9 @@
 {
-  "name": "npm_fixture",
+  "name": "yarn_and_npm_fixture",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "init": "npm i"
+    "init": "yarn"
   },
   "dependencies": {
     "is-nan": "^1.3.0",

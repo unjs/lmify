@@ -8,6 +8,9 @@ export class NPM {
     if (await workspace.exists('package-lock.json')) {
       return true
     }
+    if (await workspace.exists('package.json')) {
+      return true
+    }
   }
 
   install(packages) {
