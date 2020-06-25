@@ -8,7 +8,7 @@ declare class Lmify {
 
   // options
   setPackageManager(name: 'npm' | 'yarn'): void
-  setRootDir(): void
+  setRootDir(path: string): void
 
   // permissions
   addGranter(granter: () => Promise<boolean>): void
