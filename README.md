@@ -2,7 +2,7 @@
 
 # lmify
 
-> Let me install it for you!
+> Let Me Install It For You!
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -12,7 +12,7 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-Programmatically install NPM dependencies to the project!
+Install NPM dependencies programmatically 🤙
 
 ## Features
 
