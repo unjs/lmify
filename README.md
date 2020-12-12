@@ -1,3 +1,5 @@
+![lmify](.github/banner.svg)
+
 # lmify
 
 > Let me install it for you!
