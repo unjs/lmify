@@ -15,7 +15,7 @@ declare class Lmify {
   _grant(packages: string): Promise<boolean>
 
   // commands
-  install(packages: string[]): Promise<void> | execa.ExecaReturns
+  install(packages: string[]): Promise<void> | execa.ExecaReturnValue
 }
 
 declare var lmify: Lmify;
