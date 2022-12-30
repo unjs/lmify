@@ -1,7 +1,7 @@
 import path from 'path'
 import LMIFY from '../src/index'
 
-for (const name of ['npm', 'yarn']) {
+for (const name of ['npm', 'yarn', 'pnpm']) {
   test('Detect ' + name, async () => {
     const rootDir = path.join(__dirname, 'fixtures', name)
     const lmify = new LMIFY({ rootDir })

@@ -6,7 +6,7 @@
     "init": "yarn"
   },
   "dependencies": {
-    "is-nan": "^1.3.0",
-    "std-env": "^2.2.1"
+    "is-nan": "^1.3.2",
+    "std-env": "^3.3.1"
   }
 }
