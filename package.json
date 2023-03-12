@@ -20,7 +20,7 @@
     "dependencies": {
         "execa": "^4.1.0",
         "fs-extra": "^9.1.0",
-        "std-env": "^2.3.1"
+        "std-env": "^3.3.2"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.16.11",
