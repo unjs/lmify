@@ -27,7 +27,7 @@
         "@nuxtjs/eslint-config": "^2.0.2",
         "@types/execa": "^2.0.0",
         "babel-jest": "^25.5.1",
-        "bili": "^4.10.1",
+        "bili": "^5.0.5",
         "codecov": "^3.8.2",
         "eslint": "^7.32.0",
         "eslint-config-standard": "^14.1.1",
