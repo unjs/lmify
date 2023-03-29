@@ -1,18 +1,9 @@
-![lmify](.github/banner.svg)
-
 # lmify
 
 > Let Me Install It For You!
+>  Install NPM dependencies programmatically 🤙
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![packagephobia][packagephobia-src]][packagephobia-href]
-[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
-[![Codecov][codecov-src]][codecov-href]
-[![Dependencies][david-dm-src]][david-dm-href]
-[![Standard JS][standard-js-src]][standard-js-href]
-
-Install NPM dependencies programmatically 🤙
+## **This package is discontinued. Checkout [unjs/nypm](https://github.com/unjs/nypm) for a much better alternative!**
 
 ## Features
 
